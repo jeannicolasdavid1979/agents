@@ -2,6 +2,6 @@ FROM python:3.11-slim
 WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends gcc && rm -rf /var/lib/apt/lists/*
 COPY . /tmp/src
-RUN pip install --no-cache-dir /tmp/src/agents
+RUN pip install --no-cache-dir /tmp/src/livekit-agents
 COPY worker.py .
 CMD ["python", "worker.py", "dev"]
